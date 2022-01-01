@@ -1,11 +1,10 @@
-package com.example.demo.Model;
+package com.example.demo.model;
+
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
-import java.util.ArrayList;
-import java.util.List;
 
 @Getter
 @Setter
@@ -22,10 +21,4 @@ public class User {
 
     @Column(name = "last_name", nullable = false)
     private String lastName;
-
-    @OneToMany(cascade = CascadeType.PERSIST)
-    private List<Question> questions=new ArrayList<>();
-
-    @OneToMany(cascade = CascadeType.PERSIST)
-    private List<Answer> answers=new ArrayList<>();
 }
